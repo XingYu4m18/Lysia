@@ -1,0 +1,21 @@
+# 网易云音频指纹组件
+
+完整的网易云识别需要在本目录自行放置有权使用的 `afp.js` 和 `afp.wasm.js`。两者不在公开仓库中，也不受本项目原创代码许可覆盖。即使选择只用酷狗，当前构建脚本仍要求先补齐这两个文件；尚未实现无 AFP 的独立构建选项。
+
+本机验证时的来源：
+
+- 项目：<https://github.com/NeteaseCloudMusicApiEnhanced/api-enhanced>
+- 核对时提交：`75bf2e5ca209f4f1b3f822fa65d9f7b67e4b53ec`
+- 路径：`public/audio_match_demo/afp.js`、`public/audio_match_demo/afp.wasm.js`
+- 上游引用了 `mos9527/ncm-afp` 与网易云浏览器扩展实现。
+
+本机已验证文件 SHA-256：
+
+| 文件 | SHA-256 |
+| --- | --- |
+| afp.js | 3776F3122D8A516D716EC00F55C24B919F03A2FB4BB009191007327170D33763 |
+| afp.wasm.js | 4926A6D69527A1AFBC7F7D120B9C21947E677D80C484C8B65572FA7D4CE3B99F |
+
+这些信息用于复现及核对来源，不是分发授权。原始算法文件的分发权限尚未确认，所以本项目没有自动下载或重新发布它们。请先确认自己有权取得和使用文件，再手动复制到此目录，随后运行 `flutter pub get` 和构建脚本。校验值相同不代表已取得许可。
+
+不要移除忽略规则、提交这些文件或公开包含它们的二进制，除非已经核实相应权利并记录证据。

@@ -1,0 +1,23 @@
+name: tingjian
+description: Windows system-audio music recognition.
+publish_to: none
+version: 0.2.0+2
+environment:
+  sdk: ^3.10.0
+dependencies:
+  flutter:
+    sdk: flutter
+  material_ui: ^1.11.0
+  flutter_acrylic: ^1.1.4
+  crypto: ^3.0.8
+  flutter_inappwebview: ^6.1.5
+  sqlite3: ^2.9.4
+  sqlite3_flutter_libs: ^0.5.40
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/afp/
