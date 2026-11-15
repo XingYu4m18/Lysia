@@ -10,9 +10,23 @@ class Fingerprinter {
   HeadlessInAppWebView? _view;
   Future<void>? _initializing;
   Future<void> initialize() => _initializing ??= _initialize();
+  Future<String> _loadRuntime(String name) async {
+    final local = File(
+      '${File(Platform.resolvedExecutable).parent.path}/plugins/netease/$name',
+    );
+    if (await local.exists()) return local.readAsString();
+    try {
+      return await rootBundle.loadString('assets/afp/$name');
+    } catch (_) {
+      throw StateError(
+        '缺少网易云指纹组件：请按说明在程序同级 plugins/netease 中放置有权使用的 $name；酷狗仍可识别',
+      );
+    }
+  }
+
   Future<void> _initialize() async {
-    final wasm = await rootBundle.loadString('assets/afp/afp.wasm.js');
-    final glue = await rootBundle.loadString('assets/afp/afp.js');
+    final wasm = await _loadRuntime('afp.wasm.js');
+    final glue = await _loadRuntime('afp.js');
     final ready = Completer<void>();
     await Directory('$dataDirectory/cache/webview').create(recursive: true);
     final environment = await WebViewEnvironment.create(

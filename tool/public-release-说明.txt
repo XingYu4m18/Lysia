@@ -1,0 +1,33 @@
+聆汐 · Lysia v0.2.0 — Windows x64 公开预览版
+
+完整解压后运行 lysia.exe，请保留所有 DLL 和 data 文件夹。
+无需安装 Flutter/Python；网易云组件运行还需要系统 WebView2 Runtime。
+
+重要：公开包可直接使用酷狗；网易云需要额外的本地组件。
+网易云 AFP 文件的分发授权尚未确认，因此没有放进公开源码或下载包。
+如你有权使用并信任 afp.js、afp.wasm.js，请把两个文件放到：
+程序文件夹/plugins/netease/afp.js
+程序文件夹/plugins/netease/afp.wasm.js
+重启后即可启用网易云。外置文件会作为代码执行，请只使用可信文件。
+尚未准备组件时，建议在设置中选择“酷狗”。默认并行模式也能返回酷狗结果，并在运行记录中提示网易云组件缺失。
+
+使用：
+播放电脑上的音乐后点“开启自动识曲”，或点击“识别一次”。
+“导入音频”支持 WAV、MP3、FLAC、OGG Vorbis、AAC、M4A、WMA；至少 3 秒。
+OGG Opus 暂不支持，特殊编码可能受 Windows 媒体组件限制。
+关闭窗口后留在托盘；界面电源按钮或托盘退出菜单可彻底退出。
+亚克力效果可在设置中关闭，其显示受 Windows 环境影响。
+
+数据：
+历史和设置位于 EXE 同级 lysia.sqlite。运行时可能有 -wal、-shm 文件。
+搬迁或备份前先彻底退出，再复制整个文件夹；不要在运行中删除数据库辅助文件。
+首次启动会复制旧版默认目录的数据，不修改原库。缓存位于 cache 子目录。
+请放到具有写入权限的位置。发布压缩包不包含个人数据库、缓存或测试音乐。
+
+联网识别时，网易云接收指纹，酷狗接收短音频片段。
+启动软件不会自动采集，需要用户开启。识别结果依赖平台接口及曲库。
+原创代码采用 PolyForm Noncommercial 1.0.0，允许许可规定的非商业使用、修改和再分发，商业用途不在授权范围内。
+Required Notice: Copyright (c) 2026 XingYu4m18. Lysia / 聆汐.
+第三方组件保留各自许可，见 LICENSE、THIRD_PARTY.md、licenses 和 Flutter 资源内的许可声明。
+
+源码与问题反馈：https://github.com/XingYu4m18/Lysia

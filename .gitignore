@@ -67,3 +67,4 @@ cache/
 # NetEase fingerprint implementation: redistribution rights unverified
 /assets/afp/afp.js
 /assets/afp/afp.wasm.js
+/plugins/netease/*.js

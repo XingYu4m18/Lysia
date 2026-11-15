@@ -2,7 +2,7 @@
 
 Windows 系统音乐识别，Flutter + Dart 界面和业务逻辑，C++ WASAPI 系统内录。
 
-> 公开仓库不包含分发许可尚未确认的网易云 AFP 第三方组件。构建前请按 [组件说明](assets/afp/README.md) 自行准备有权使用的文件。本机验证是在已准备这两个文件的环境中完成的，单独克隆源码不能直接复现完整双平台识别。当前没有发布包含该组件的公共安装包。
+> 公开源码与下载包不包含分发许可尚未确认的网易云 AFP 第三方组件。公开包可使用酷狗；网易云需自行准备有权使用的本地组件，见 [组件说明](assets/afp/README.md)。完整双平台识别验证是在本机已准备组件的环境中完成的。
 
 ## v0.2.0
 
@@ -17,7 +17,7 @@ Windows 系统音乐识别，Flutter + Dart 界面和业务逻辑，C++ WASAPI �
 
 ## 使用
 
-完整解压 Windows 程序包后运行 lysia.exe，点击“开启自动识曲”，在对应输出设备上播放音乐。首次系统识曲需要积累约 6 秒音频。文件导入要求至少 3 秒，较长文件会取前部的 6 秒片段用于识别。
+从 [Releases](https://github.com/XingYu4m18/Lysia/releases) 下载并完整解压 Windows 程序包后运行 lysia.exe，点击“开启自动识曲”，在对应输出设备上播放音乐。首次系统识曲需要积累约 6 秒音频。文件导入要求至少 3 秒，较长文件会取前部的 6 秒片段用于识别。公开包未补齐组件时建议在设置中选择酷狗；默认并行模式也能返回酷狗结果，并在运行记录中报告网易云缺少组件。
 
 关闭窗口后留在托盘，右击可暂停或退出，窗口右上角电源按钮也可退出。启动时不会自动采集。输出设备断开后重新选择并开启。
 
@@ -37,7 +37,7 @@ Windows 系统音乐识别，Flutter + Dart 界面和业务逻辑，C++ WASAPI �
 
 Flutter 3.50 / Dart 3.14，Visual Studio 2026 桌面 C++ 工具，Windows SDK，NuGet CLI。
 
-先准备 `assets/afp/afp.js` 与 `assets/afp/afp.wasm.js`，见 [组件说明](assets/afp/README.md)。
+完整本机构建需先准备 `assets/afp/afp.js` 与 `assets/afp/afp.wasm.js`，见 [组件说明](assets/afp/README.md)。不含组件的公开包可直接使用 `powershell -File tool/build_windows.ps1 -PublicRelease` 构建。
 
 - flutter pub get
 - flutter analyze
